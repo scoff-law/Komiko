@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Komiko"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid Margin="10,0,10,10">
+        <!-- People list -->
+        <Border Grid.Column="0" Grid.Row="0" Height="35" Padding="5" Background="#4E87D4">
+            <Label VerticalAlignment="Center" Foreground="White">Names</Label>
+        </Border>
+        <ListBox Name="Files" Grid.Column="0" Grid.Row="1">
+        </ListBox>
     </Grid>
+    
 </Window>

@@ -69,6 +69,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Contracts\Engines\ILibraryEngine.cs" />
+    <Compile Include="Contracts\Managers\ILibraryManager.cs" />
     <Compile Include="Data\ComicData.cs" />
     <Compile Include="Contracts\Data\IComicData.cs" />
     <Compile Include="Engines\LibraryEngine.cs" />
@@ -112,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Mappers\" />
+    <Folder Include="Managers\" />
     <Folder Include="Models\Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

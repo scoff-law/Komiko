@@ -3,10 +3,10 @@ using Komiko.Models;
 
 namespace Komiko.Contracts.Engines
 {
-    interface ILibraryEngine
+    public interface ILibraryEngine
     {
         void BuildLibrary();
 
-        List<Comic> GetComics(string path);
+        List<string> GetComics();
     }
 }

@@ -10,7 +10,7 @@ namespace Komiko.Helpers
         // Currently all comic files are assumed to be zip archives
         private static readonly List<string> ValidComicFileTypes = new List<string>
         {
-            ".cpb",
+            ".cbr",
             ".zip"
         };
 

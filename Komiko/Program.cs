@@ -20,7 +20,7 @@ namespace Komiko
         private static Container Bootstrap()
         {
             var container = new Container();
-            
+               
             // Register types
             ModuleLoader.LoadModules(container);
 
@@ -36,7 +36,7 @@ namespace Komiko
                 var mainWindow = container.GetInstance<MainWindow>();
                 app.Run(mainWindow);
             }
-            catch (Exception ex)
+            catch
             {
                 // TODO Log the exception and exit
             }
