@@ -37,6 +37,12 @@
     <StartupObject>Komiko.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiteDB, Version=3.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.3.1.4\lib\net35\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.18.2.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.18.2\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleInjector, Version=4.0.11.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.11\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
@@ -68,15 +74,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Contracts\Data\ILibraryData.cs" />
     <Compile Include="Contracts\Engines\ILibraryEngine.cs" />
+    <Compile Include="Contracts\Engines\IApplicationEngine.cs" />
     <Compile Include="Contracts\Managers\ILibraryManager.cs" />
     <Compile Include="Data\ComicData.cs" />
     <Compile Include="Contracts\Data\IComicData.cs" />
+    <Compile Include="Data\LibraryData.cs" />
+    <Compile Include="Engines\ApplicationEngine.cs" />
     <Compile Include="Engines\LibraryEngine.cs" />
     <Compile Include="Helpers\ComicHelper.cs" />
     <Compile Include="Helpers\Extensions\ComicExtensions.cs" />
     <Compile Include="Helpers\FileHelpers.cs" />
     <Compile Include="Infrastructure\ModuleLoader.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\Constants\DatabaseKeys.cs" />
+    <Compile Include="Models\DataModels\v1\Config.cs" />
+    <Compile Include="Models\Folder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -115,6 +129,9 @@
     <Folder Include="Data\Mappers\" />
     <Folder Include="Managers\" />
     <Folder Include="Models\Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

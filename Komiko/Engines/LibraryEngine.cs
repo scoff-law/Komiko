@@ -1,27 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Komiko.Contracts.Data;
 using Komiko.Contracts.Engines;
-using Komiko.Helpers.Extensions;
 
 namespace Komiko.Engines
 {
     public class LibraryEngine : ILibraryEngine
     {
         private readonly IComicData _comicData;
+        private readonly ILibraryData _libraryData;
 
         // TODO settings
 
-        #region Settings
-
-        public const string LibraryPath = @"C:\Users\Ben\Comics";
-
-        public const bool Recursive = true;
-
-        #endregion
-
-        public LibraryEngine(IComicData comicData)
+        public LibraryEngine(IComicData comicData, ILibraryData libraryData)
         {
             _comicData = comicData;
+            _libraryData = libraryData;
         }
 
         public void BuildLibrary()
@@ -31,7 +25,10 @@ namespace Komiko.Engines
 
         public List<string> GetComics()
         {
-            return _comicData.GetComicPaths(LibraryPath, Recursive).StripPath(LibraryPath);
+            var libraryFolders = _libraryData.GetLibraryFolders();
+            var comics = libraryFolders.SelectMany(_comicData.GetComicPaths);
+
+            return comics.ToList();
         }
     }
 }

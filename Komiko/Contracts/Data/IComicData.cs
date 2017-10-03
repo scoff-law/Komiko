@@ -7,6 +7,6 @@ namespace Komiko.Contracts.Data
     {
         Comic GetComic(string path);
 
-        List<string> GetComicPaths(string path, bool recursive);
+        List<string> GetComicPaths(Folder folder);
     }
 }

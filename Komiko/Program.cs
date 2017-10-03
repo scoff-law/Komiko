@@ -14,6 +14,8 @@ namespace Komiko
         {
             var container = Bootstrap();
 
+            //var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
             RunApplication(container);
         }
 
